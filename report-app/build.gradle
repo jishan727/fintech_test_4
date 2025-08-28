@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.ikc'
+version = '1.0.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.github.lgooddatepicker:LGoodDatePicker:11.2.1'
+    implementation 'com.miglayout:miglayout-swing:11.3'
+}
+
+application {
+    mainClass = 'com.ikc.formgui.MainApp'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
